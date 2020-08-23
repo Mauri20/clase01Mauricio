@@ -106,8 +106,18 @@ public class CrudPersona extends javax.swing.JFrame {
         jLabel5.setText("Sexo");
 
         jButton2.setText("Elimiar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Actualizar Datos");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Probar conexion");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -240,6 +250,27 @@ public class CrudPersona extends javax.swing.JFrame {
         Personas.AgregarPersona(Persona);
         MostrarTablaPersona();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         ClsPersonas Personas = new ClsPersonas();
+        persona Persona = new persona();
+        Persona.setIdPersona(Integer.parseInt(txtId.getText()));
+        Personas.BorrarPersona(Persona);
+        MostrarTablaPersona();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+               ClsPersonas Personas = new ClsPersonas();
+        persona Persona = new persona();
+         Persona.setIdPersona(Integer.parseInt(txtId.getText()));
+        Persona.setNombre(txtNombre.getText());
+        Persona.setApellido(txtApellido.getText());
+        Persona.setEdad(Integer.parseInt(txtEdad.getText()));
+        Persona.setSexo(txtsexo.getText());
+
+        Personas.ActualizarPersona(Persona);
+        MostrarTablaPersona();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
