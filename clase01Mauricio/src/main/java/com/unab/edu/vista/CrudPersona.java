@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unab.edu.OperadorBds;
+package com.unab.edu.vista;
 
 import com.unab.edu.Dao.ClsPersonas;
 import com.unab.edu.conexionMau.conexionBDs;
